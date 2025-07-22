@@ -1,0 +1,16 @@
+export const POSITIONS = [
+  { label: 'Kaleci', value: 'GK' },
+  { label: 'Stoper', value: 'CB' },
+  { label: 'Sol Bek', value: 'LB' },
+  { label: 'Sağ Bek', value: 'RB' },
+  { label: 'Defansif Orta Saha', value: 'CDM' },
+  { label: 'Merkez Orta Saha', value: 'CM' },
+  { label: 'Ofansif Orta Saha', value: 'CAM' },
+  { label: 'Sol Kanat', value: 'LM' },
+  { label: 'Sağ Kanat', value: 'RM' },
+  { label: 'Sol Forvet', value: 'LW' },
+  { label: 'Sağ Forvet', value: 'RW' },
+  { label: 'Forvet Arkası', value: 'CF' },
+  { label: 'Santrafor', value: 'ST' },
+  { label: 'Belirsiz', value: 'NO' },
+]

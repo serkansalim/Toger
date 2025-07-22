@@ -1,0 +1,74 @@
+/* === CSS Reset === */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px; /* Varsayılan font boyutu */
+    scroll-behavior: smooth; /* Yumuşak kaydırma */
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+    margin: 0;
+}
+
+::-webkit-scrollbar {
+    background: #e6e6e6;
+    border-radius: 5px;
+    height: 5px;
+    width: 5px;
+}
+::-webkit-scrollbar-button {
+    display: none;
+}
+::-webkit-scrollbar-thumb {
+    background: #000;
+    border-radius: 5px;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+.skeleton-card {
+    background-color: #fff;
+  }
+  .skeleton-image {
+    height: 150px;
+    background-color: #e2e2e2;
+    animation: pulse 1.5s infinite;
+    border-radius: 6px;
+  }
+  .skeleton-text {
+    height: 16px;
+    background-color: #e2e2e2;
+    animation: pulse 1.5s infinite;
+    border-radius: 4px;
+  }
+  .skeleton-text.short {
+    width: 60%;
+  }
+  @keyframes pulse {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.4;
+    }
+    100% {
+      opacity: 1;
+    }
+  }

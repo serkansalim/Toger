@@ -1,0 +1,46 @@
+{
+  "name": "football",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nuxt dev",
+    "build": "NODE_OPTIONS='--max-old-space-size=1024' nuxt build",
+    "preview": "nuxt preview",
+    "start": "node .output/server/index.mjs"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.7.2",
+    "@pinia/nuxt": "^0.11.0",
+    "@vueup/vue-quill": "^1.2.0",
+    "axios": "^1.8.4",
+    "bcryptjs": "^3.0.2",
+    "body-parser": "^2.2.0",
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "nitropack": "^2.11.8",
+    "nuxt": "^3.16.0",
+    "pinia": "^3.0.2",
+    "quill": "^2.0.3",
+    "router.js": "^1.0.3",
+    "swiper": "^11.2.6",
+    "vue-router": "^4.5.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/serkansalim/FOOTBALL.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/serkansalim/FOOTBALL/issues"
+  },
+  "homepage": "https://github.com/serkansalim/FOOTBALL#readme",
+  "description": "",
+  "devDependencies": {
+    "@types/node": "^22.14.1",
+    "@types/vue": "^2.0.0",
+    "@vueuse/core": "^13.1.0"
+  }
+}

@@ -1,0 +1,36 @@
+// utils/eventTypes.ts
+export enum EventType {
+    Training = 'training',
+    Match = 'match',
+    Tournament = 'tournament',
+    Meeting = 'meeting',
+    Workshop = 'workshop',
+    Seminar = 'seminar',
+    TeamBuilding = 'team_building',
+    SocialEvent = 'social_event',
+    FitnessTest = 'fitness_test',
+    AwardCeremony = 'award_ceremony',
+    Camp = 'camp',
+    Fundraising = 'fundraising',
+    Volunteering = 'volunteering',
+    FanMeeting = 'fan_meeting',
+    PressConference = 'press_conference',
+}
+
+export const EventTypeLabels: Record<EventType, string> = {
+    [EventType.Training]: 'Antrenman',
+    [EventType.Match]: 'Maç',
+    [EventType.Tournament]: 'Turnuva',
+    [EventType.Meeting]: 'Toplantı',
+    [EventType.Workshop]: 'Atölye',
+    [EventType.Seminar]: 'Seminer',
+    [EventType.TeamBuilding]: 'Takım Kurma Etkinliği',
+    [EventType.SocialEvent]: 'Sosyal Etkinlik',
+    [EventType.FitnessTest]: 'Kondisyon Testi',
+    [EventType.AwardCeremony]: 'Ödül Töreni',
+    [EventType.Camp]: 'Kamp',
+    [EventType.Fundraising]: 'Kaynak Toplama',
+    [EventType.Volunteering]: 'Gönüllülük Etkinliği',
+    [EventType.FanMeeting]: 'Taraftar Buluşması',
+    [EventType.PressConference]: 'Basın Toplantısı',
+}
