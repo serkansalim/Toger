@@ -150,18 +150,15 @@ function applyFilters() {
 }
 
 .refund-button {
-    width: 115%;
-    background-color: #dc3545;
-    color: white;
-    padding: 6px 12px;
-    border: none;
-    border-radius: 4px;
-    font-weight: bold;
-    cursor: pointer;
-    display: inline-block;
-    margin: 5px 0;
-    font-size: 14px;
-    margin-left: -4px;
+	width: 100%;
+	background-color: #dc3545;
+	color: white;
+	padding: 6px 12px;
+	border: none;
+	border-radius: 4px;
+	font-weight: bold;
+	cursor: pointer;
+	font-size: 14px;
 }
 
 .refund-button:hover {

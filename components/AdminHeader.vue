@@ -4,13 +4,13 @@
             <span class="menu-toggle-close" @click="toggleSidebar">&times;</span>
             <nav class="menu mb-5">
                 <NuxtLink to="/admin/dashboard" class="menu-item" @click="isSidebarOpen=false">🏠 Dashboard</NuxtLink>
-                <NuxtLink to="/admin/users" class="menu-item" @click="isSidebarOpen=false">👥 Kullanıcılar</NuxtLink>
-                <NuxtLink to="/admin/parents" class="menu-item" @click="isSidebarOpen=false">💰 Fiyat Tarifesi</NuxtLink>
-                <NuxtLink to="/admin/matches" class="menu-item" @click="isSidebarOpen=false">🅿️ Park Oturumları</NuxtLink>
-                <NuxtLink to="/admin/events" class="menu-item" @click="isSidebarOpen=false">📄 Beyaz Liste</NuxtLink>
-                <NuxtLink to="/admin/sponsors" class="menu-item" @click="isSidebarOpen=false">🚗 HGS Onay</NuxtLink>
-                <NuxtLink to="/admin/applications" class="menu-item" @click="isSidebarOpen=false">🚗 HGS Ödeme Geç</NuxtLink>
-                <NuxtLink to="/admin/payments" class="menu-item" @click="isSidebarOpen=false">📑 Raporlar</NuxtLink>
+                <NuxtLink to="/admin/kullanicilar" class="menu-item" @click="isSidebarOpen=false">👥 Kullanıcılar</NuxtLink>
+                <NuxtLink to="/admin/fiyat-tarifesi" class="menu-item" @click="isSidebarOpen=false">💰 Fiyat Tarifesi</NuxtLink>
+                <NuxtLink to="/admin/park-oturumlari" class="menu-item" @click="isSidebarOpen=false">🅿️ Park Oturumları</NuxtLink>
+                <NuxtLink to="/admin/beyaz-liste" class="menu-item" @click="isSidebarOpen=false">📄 Beyaz Liste</NuxtLink>
+                <NuxtLink to="/admin/hgs-onay" class="menu-item" @click="isSidebarOpen=false">🚗 HGS Onay</NuxtLink>
+                <NuxtLink to="/admin/hgs-odeme-gec" class="menu-item" @click="isSidebarOpen=false">🚗 HGS Ödeme Geç</NuxtLink>
+                <NuxtLink to="/admin/raporlar" class="menu-item" @click="isSidebarOpen=false">📑 Raporlar</NuxtLink>
 
             </nav>
         </aside>
