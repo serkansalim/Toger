@@ -155,7 +155,7 @@ function applyFilters() {
 	color: white;
 	padding: 6px 10px;
 	border: none;
-	border-radius: 4px;
+	border-radius: 0px;
 	font-weight: bold;
 	cursor: pointer;
 	font-size: 14px;
