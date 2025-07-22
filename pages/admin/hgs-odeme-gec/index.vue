@@ -25,34 +25,40 @@
             <span class="text-sm">kayıt göster</span>
         </div>
 
-        <div class="overflow-x-auto mb-4">
-            <table class="w-full border table-auto mt-4 ">
-                <thead class="bg-gray-100 text-left">
-                    <tr>
-                        <th class="p-2 border">Oluşturulma Tarihi</th>
-                        <th class="p-2 border">Plaka</th>
-                        <th class="p-2 border">Ödeme Tutarı</th>
-                        <th class="p-2 border">Ödeme Durumu</th>
-                        <th class="p-2 border">Son Deneme</th>
-                        <th class="p-2 border">Ödeme ID</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr v-for="(item, i) in paginatedData" :key="i" class="hover:bg-gray-50">
-                        <td class="p-2 border">{{ item.createdAt }}</td>
-                        <td class="p-2 border">{{ item.plate }}</td>
-                        <td class="p-2 border">{{ item.amount }} TL</td>
-                        <td class="p-2 border">{{ item.status }}</td>
-                        <td class="p-2 border">{{ item.lastTry }}</td>
-                        <td class="p-2 border text-xs">{{ item.paymentId }}</td>
-                        <td class="p-2 border text-center">
-                            <button v-if="item.status === 'Ödendi'" class="refund-button" @click="refund(item)">
-                                İade Et
-                            </button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="table-responsive mb-4">
+                        <table class="table border table-responsive-lg mt-4 ">
+                            <thead class="bg-gray-100 text-left">
+                                <tr>
+                                    <th class="p-2 border">Oluşturulma Tarihi</th>
+                                    <th class="p-2 border">Plaka</th>
+                                    <th class="p-2 border">Ödeme Tutarı</th>
+                                    <th class="p-2 border">Ödeme Durumu</th>
+                                    <th class="p-2 border">Son Deneme</th>
+                                    <th class="p-2 border">Ödeme ID</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr v-for="(item, i) in paginatedData" :key="i" class="hover:bg-gray-50">
+                                    <td class="p-2 border">{{ item.createdAt }}</td>
+                                    <td class="p-2 border">{{ item.plate }}</td>
+                                    <td class="p-2 border">{{ item.amount }} TL</td>
+                                    <td class="p-2 border">{{ item.status }}</td>
+                                    <td class="p-2 border">{{ item.lastTry }}</td>
+                                    <td class="p-2 border text-xs">{{ item.paymentId }}</td>
+                                    <td class="p-2 border text-center">
+                                        <button v-if="item.status === 'Ödendi'" class="refund-button" @click="refund(item)">
+                                            İade Et
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <nav class="d-flex justify-content-start">

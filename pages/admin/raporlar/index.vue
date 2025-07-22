@@ -4,12 +4,8 @@
         <p class="text-gray-600 mb-4">Dashboard > HGS Onay</p>
 
         <div class="button-group mb-6">
-            <button
-                v-for="type in filterTypes"
-                :key="type"
-                @click="selectedFilter = type"
-                :class="['btn', { active: selectedFilter === type }]"
-            >
+            <button v-for="type in filterTypes" :key="type" @click="selectedFilter = type"
+                :class="['btn', { active: selectedFilter === type }]">
                 {{ type }}
             </button>
         </div>
@@ -34,19 +30,15 @@
         <div class="combined-graph-card">
             <div class="graph-box">
                 <h5 class="graph-title">Tamamlanan Parklar</h5>
-                <img
-                    src="https://st.depositphotos.com/1079068/3266/i/380/depositphotos_32662663-stock-photo-business-graph-up.jpg"
-                    alt="Grafik 1"
-                    class="graph-image"
-                />
+                <ClientOnly>
+                    <BarChart />
+                </ClientOnly>
             </div>
             <div class="graph-box">
                 <h5 class="graph-title">Ödemeler</h5>
-                <img
-                    src="https://st.depositphotos.com/1079068/3266/i/380/depositphotos_32662663-stock-photo-business-graph-up.jpg"
-                    alt="Grafik 2"
-                    class="graph-image"
-                />
+                <ClientOnly>
+                    <BarChart />
+                </ClientOnly>
             </div>
         </div>
     </div>
@@ -58,6 +50,7 @@ definePageMeta({
 })
 
 import { ref } from 'vue'
+import BubbleChart from '~/components/BarChart.vue'
 
 const filterTypes = ['Günlük', 'Haftalık', 'Aylık', 'Özel Tarih']
 const selectedFilter = ref('Günlük')
