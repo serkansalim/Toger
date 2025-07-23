@@ -33,7 +33,6 @@ export default defineNuxtConfig({
                 { property: 'og:image', content: 'https://toger.com/logo.png' }
             ],
             link: [
-                { rel: 'manifest', href: '/site.webmanifest' }
             ],
             script: [
                 {

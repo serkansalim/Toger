@@ -1,85 +1,87 @@
 <template>
-    <h3 class="text-2xl font-bold mb-1">Dashboard</h3>
-    <p class="text-gray-600 mb-2">Dashboard > HGS Ödeme Geçişi</p>
-    <div class="card p-6 bg-white rounded-xl shadow space-y-4 text-sm">
-        <h5 class="text-2xl font-semibold mb-4">HGS Ödeme Geçişi</h5>
-        <div class="filters">
-            <input type="date" v-model="startDate" class="border px-2 py-1" />
-            <input type="date" v-model="endDate" class="border px-2 py-1" />
-            <select class="border border-gray-300 px-2 py-1 text-sm no-rounded">
-                <option>Tümü</option>
-            </select>
-            <button class="border px-2 py-1 bg-gray-200 hover:bg-gray-300">
-                🔽
-            </button>
-        </div>
-        <div class="flex items-center space-x-2 ml-auto">
-            <label class="text-sm">
-                Sayfada
-            </label>
-            <select v-model="perPage" class="border px-2 py-1 rounded text-sm">
-                <option :value="5">5</option>
-                <option :value="10">10</option>
-                <option :value="25">25</option>
-            </select>
-            <span class="text-sm">kayıt göster</span>
-        </div>
-
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="table-responsive mb-4">
-                        <table class="table border table-responsive-lg mt-4 ">
-                            <thead class="bg-gray-100 text-left">
-                                <tr>
-                                    <th class="p-2 border">Oluşturulma Tarihi</th>
-                                    <th class="p-2 border">Plaka</th>
-                                    <th class="p-2 border">Ödeme Tutarı</th>
-                                    <th class="p-2 border">Ödeme Durumu</th>
-                                    <th class="p-2 border">Son Deneme</th>
-                                    <th class="p-2 border">Ödeme ID</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr v-for="(item, i) in paginatedData" :key="i" class="hover:bg-gray-50">
-                                    <td class="p-2 border">{{ item.createdAt }}</td>
-                                    <td class="p-2 border">{{ item.plate }}</td>
-                                    <td class="p-2 border">{{ item.amount }} TL</td>
-                                    <td class="p-2 border">{{ item.status }}</td>
-                                    <td class="p-2 border">{{ item.lastTry }}</td>
-                                    <td class="p-2 border text-xs">{{ item.paymentId }}</td>
-                                    <td class="p-2 border text-center">
-                                        <button v-if="item.status === 'Ödendi'" class="refund-button" @click="refund(item)">
-                                            İade Et
-                                        </button>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
+    <div class="container-fluid my-md-5">
+        <h3 class="text-2xl font-bold mb-1">Dashboard</h3>
+        <p class="text-gray-600 mb-2">Dashboard > HGS Ödeme Geçişi</p>
+        <div class="card p-6 bg-white rounded-xl shadow space-y-4 text-sm">
+            <h5 class="text-2xl font-semibold mb-4">HGS Ödeme Geçişi</h5>
+            <div class="filters">
+                <input type="date" v-model="startDate" class="border px-2 py-1" />
+                <input type="date" v-model="endDate" class="border px-2 py-1" />
+                <select class="border border-gray-300 px-2 py-1 text-sm no-rounded">
+                    <option>Tümü</option>
+                </select>
+                <button class="border px-2 py-1 bg-gray-200 hover:bg-gray-300">
+                    🔽
+                </button>
+            </div>
+            <div class="flex items-center space-x-2 ml-auto">
+                <label class="text-sm">
+                    Sayfada
+                </label>
+                <select v-model="perPage" class="border px-2 py-1 rounded text-sm">
+                    <option :value="5">5</option>
+                    <option :value="10">10</option>
+                    <option :value="25">25</option>
+                </select>
+                <span class="text-sm">kayıt göster</span>
+            </div>
+    
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="table-responsive mb-4">
+                            <table class="table border table-responsive-lg mt-4 ">
+                                <thead class="bg-gray-100 text-left">
+                                    <tr>
+                                        <th class="p-2 border">Oluşturulma Tarihi</th>
+                                        <th class="p-2 border">Plaka</th>
+                                        <th class="p-2 border">Ödeme Tutarı</th>
+                                        <th class="p-2 border">Ödeme Durumu</th>
+                                        <th class="p-2 border">Son Deneme</th>
+                                        <th class="p-2 border">Ödeme ID</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr v-for="(item, i) in paginatedData" :key="i" class="hover:bg-gray-50">
+                                        <td class="p-2 border">{{ item.createdAt }}</td>
+                                        <td class="p-2 border">{{ item.plate }}</td>
+                                        <td class="p-2 border">{{ item.amount }} TL</td>
+                                        <td class="p-2 border">{{ item.status }}</td>
+                                        <td class="p-2 border">{{ item.lastTry }}</td>
+                                        <td class="p-2 border text-xs">{{ item.paymentId }}</td>
+                                        <td class="p-2 border text-center">
+                                            <button v-if="item.status === 'Ödendi'" class="refund-button" @click="refund(item)">
+                                                İade Et
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>
+    
+            <nav class="d-flex justify-content-start">
+                <ul class="pagination">
+                    <li class="page-item" :class="{ disabled: currentPage === 1 }">
+                        <button class="page-link" @click="goToPage(1)">İlk</button>
+                    </li>
+                    <li class="page-item" :class="{ disabled: currentPage === 1 }">
+                        <button class="page-link" @click="goToPage(currentPage - 1)">Önceki</button>
+                    </li>
+                    <li class="page-item active">
+                        <span class="page-link">{{ currentPage }}</span>
+                    </li>
+                    <li class="page-item" :class="{ disabled: currentPage === totalPages }">
+                        <button class="page-link" @click="goToPage(currentPage + 1)">Sonraki</button>
+                    </li>
+                    <li class="page-item" :class="{ disabled: currentPage === totalPages }">
+                        <button class="page-link" @click="goToPage(totalPages)">Son</button>
+                    </li>
+                </ul>
+            </nav>
         </div>
-
-        <nav class="d-flex justify-content-start">
-            <ul class="pagination">
-                <li class="page-item" :class="{ disabled: currentPage === 1 }">
-                    <button class="page-link" @click="goToPage(1)">İlk</button>
-                </li>
-                <li class="page-item" :class="{ disabled: currentPage === 1 }">
-                    <button class="page-link" @click="goToPage(currentPage - 1)">Önceki</button>
-                </li>
-                <li class="page-item active">
-                    <span class="page-link">{{ currentPage }}</span>
-                </li>
-                <li class="page-item" :class="{ disabled: currentPage === totalPages }">
-                    <button class="page-link" @click="goToPage(currentPage + 1)">Sonraki</button>
-                </li>
-                <li class="page-item" :class="{ disabled: currentPage === totalPages }">
-                    <button class="page-link" @click="goToPage(totalPages)">Son</button>
-                </li>
-            </ul>
-        </nav>
     </div>
 </template>
 

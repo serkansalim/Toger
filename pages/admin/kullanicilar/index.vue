@@ -1,5 +1,5 @@
 <template>
-	<div class="container my-5">
+	<div class="container-fluid my-md-5">
 		<div class="card">
 			<div class="d-flex justify-content-between align-items-center mb-3">
 				<h4>Kullanıcılar</h4>

@@ -1,5 +1,5 @@
 <template>
-  <div class="container my-5">
+  <div class="container-fluid my-md-5">
     <h1 class="text-2xl font-bold mb-4">Dashboard</h1>
     <p class="text-gray-600 mb-2">Dashboard > Fiyat Tarifesi</p>
 

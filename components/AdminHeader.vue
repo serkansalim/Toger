@@ -1,5 +1,5 @@
 <template>
-    <div class="admin-layout">
+    <div>
         <aside class="sidebar" :class="{ open: isSidebarOpen }">
             <span class="menu-toggle-close" @click="toggleSidebar">&times;</span>
             <nav class="menu mb-5">
@@ -27,11 +27,6 @@
                     <button class="logout-btn" @click="logout">Çıkış</button>
                 </div>
             </header>
-
-            <!-- Page Content -->
-            <main class="page-content">
-                <slot />
-            </main>
         </div>
     </div>
 </template>

@@ -1,5 +1,5 @@
 <template>
-    <div class="card">
+    <div class="card p-3">
         <h4 class="text-2xl font-bold mb-0">Dashboard</h4>
         <p class="text-gray-600 mb-4">Dashboard > HGS Onay</p>
 

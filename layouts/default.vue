@@ -1,10 +1,11 @@
 <template>
-    <div>
-        <AdminHeader>
-            <main>
+    <div class="admin-layout">
+        <AdminHeader />
+        <main class="container-fluid px-0">
+            <div class="main-content">
                 <slot />
-            </main>
-        </AdminHeader>
+            </div>
+        </main>
     </div>
 </template>
 
